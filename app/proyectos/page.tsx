@@ -6,8 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import portadaKanat from "@/assets/work/portada-kanat.jpg"; 
 import portadaCanecart from "@/assets/work/portada-canecart.jpg";
 
-
-// Imports de tus imágenes
+// 1. TUS IMPORTS (Verifica que estas rutas existan en tu carpeta assets)
 import diseno1 from "@/assets/work/diseno1.jpg";
 import diseno2 from "@/assets/work/diseno2.jpg";
 import diseno3 from "@/assets/work/diseno3.jpg";
@@ -18,27 +17,34 @@ const TEXTS = {
     graphic: "Diseño",
     designs: "GRÁFICO",
     desc: "Piezas de composición visual y retoque digital avanzado.",
-    film: "DIRECCIÓN",
-    directed: "Trabajos Dirigidos",
-    identity: "IDENTIDAD VISUAL",
-    motion: "MOTION GRAPHICS"
   },
   en: {
     back: "[ ← BACK ]",
     graphic: "Graphic",
     designs: "DESIGNS",
     desc: "Visual composition pieces and advanced digital retouching.",
-    film: "FILMMAKING",
-    directed: "Directed Works",
-    identity: "VISUAL IDENTITY",
-    motion: "MOTION GRAPHICS"
   }
 };
 
 const galeriaDiseno = [
-  { id: 1, img: diseno1, tool: "Ps" },
-  { id: 2, img: diseno2, tool: "Ps" },
-  { id: 3, img: diseno3, tool: "Ai" },
+  { 
+    id: 1, 
+    img: diseno1, 
+    title: "SOLOMAC COMMUNITY", 
+    concept: "El cliente necesitaba un Poster para su local SOLOMAC.",
+  },
+  { 
+    id: 2, 
+    img: diseno2, 
+    title: "PROYECTO 2", 
+    concept: "Descripción del segundo proyecto gráfico.",
+  },
+  { 
+    id: 3, 
+    img: diseno3, 
+    title: "PROYECTO 3", 
+    concept: "Descripción del tercer proyecto gráfico.",
+  }
 ];
 
 export default function ProyectosPage() {
@@ -51,7 +57,8 @@ export default function ProyectosPage() {
 
   return (
     <div className="bg-[#050505] min-h-screen text-white pb-40 selection:bg-[#D90429]">
-      {/* Navegación Superior Limpia */}
+      
+      {/* NAVEGACIÓN SUPERIOR */}
       <nav className="p-8 sticky top-0 z-50 bg-[#050505]/90 backdrop-blur-xl border-b border-white/5 flex justify-between items-center">
         <Link href="/" className="text-[#D90429] font-mono text-[10px] tracking-[0.3em] border border-[#D90429]/30 px-6 py-2 hover:bg-[#D90429] hover:text-white transition-all uppercase font-bold">
           {t.back}
@@ -66,42 +73,54 @@ export default function ProyectosPage() {
 
       <main className="max-w-7xl mx-auto px-6 space-y-60 mt-20">
         
-        {/* 01. DISEÑO GRÁFICO (Visualizador Proporcional) */}
-        <section className="flex flex-col md:flex-row gap-16 items-center">
-          <div className="md:w-1/3">
-            <span className="text-[#D90429] font-serif italic text-4xl block mb-2">{t.graphic}</span>
+        {/* 01. DISEÑO GRÁFICO */}
+        <section className="flex flex-col md:flex-row gap-16 items-start">
+          <div className="md:w-1/3 md:sticky md:top-24">
+            <span className="text-[#D90429] font-serif italic text-4xl block mb-2">01.</span>
             <h2 className="text-7xl font-black uppercase leading-none mb-8 tracking-tighter">{t.designs}</h2>
-            <p className="text-white/40 text-sm font-light leading-relaxed uppercase tracking-widest">{t.desc}</p>
+            
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={galeriaDiseno[index].id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                className="border-l-2 border-[#D90429] pl-6 mt-10"
+              >
+                <h4 className="text-white font-bold uppercase text-sm mb-2">{galeriaDiseno[index].title}</h4>
+                <p className="text-white/60 text-xs leading-relaxed mb-4 font-light">{galeriaDiseno[index].concept}</p>
+              </motion.div>
+            </AnimatePresence>
           </div>
           
-          <div className="md:w-2/3 w-full flex flex-col items-center">
-            <div className="relative w-full border border-white/10 bg-[#111] rounded-sm p-4 flex justify-center items-center overflow-hidden min-h-[500px]">
+          <div className="md:w-2/3 w-full">
+            <div className="relative w-full border border-white/5 bg-[#0A0A0A] rounded-sm p-4 md:p-12 flex justify-center items-center overflow-hidden min-h-[600px] shadow-2xl">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={galeriaDiseno[index].id}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
                   className="relative flex justify-center w-full"
                 >
                   <Image 
                     src={galeriaDiseno[index].img} 
-                    alt="Proyecto" 
-                    className="w-full h-auto max-h-[70vh] object-contain shadow-2xl"
+                    alt={galeriaDiseno[index].title}
+                    className="max-h-[75vh] w-auto object-contain shadow-2xl"
                     priority
                   />
                 </motion.div>
               </AnimatePresence>
 
-              {/* Controles de Navegación */}
-              <div className="absolute bottom-6 right-6 flex gap-6">
-                <button onClick={prev} className="text-[#D90429] hover:text-white font-bold text-xs tracking-tighter transition-colors"> ANTERIOR </button>
-                <button onClick={next} className="text-[#D90429] hover:text-white font-bold text-xs tracking-tighter transition-colors"> SIGUIENTE </button>
+              <div className="absolute bottom-6 right-6 flex gap-6 items-center bg-black/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10">
+                <button onClick={prev} className="text-white/40 hover:text-[#D90429] font-mono text-[10px] transition-all"> ANTERIOR </button>
+                <span className="text-white/20 text-[10px] font-mono">{index + 1} / {galeriaDiseno.length}</span>
+                <button onClick={next} className="text-[#D90429] hover:text-white font-mono text-[10px] transition-all"> SIGUIENTE </button>
               </div>
             </div>
           </div>
         </section>
+
 
         {/* 02. PRODUCCIÓN AUDIOVISUAL - FORMATO VERTICAL */}
         <section id="direction" className="border-t border-white/10 pt-40 text-center">

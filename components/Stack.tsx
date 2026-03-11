@@ -5,6 +5,7 @@ import pr from "@/assets/icons/premiere.svg";
 import ae from "@/assets/icons/aftereffects.svg";
 import ps from "@/assets/icons/photoshop.svg";
 import lr from "@/assets/icons/lightroom.svg"; 
+import Ai from "@/assets/icons/illustrator.svg"; 
 
 export default function Stack({ lang }: { lang: "es" | "en" }) {
   const tools = [
@@ -12,6 +13,7 @@ export default function Stack({ lang }: { lang: "es" | "en" }) {
     { name: "After Effects", cat: "VFX", icon: ae.src },
     { name: "Photoshop", cat: "GFX", icon: ps.src },
     { name: "Lightroom", cat: "COLOR", icon: lr.src },
+    { name: "illustrator", cat: "VECTOR", icon: Ai.src },
   ];
 
   return (

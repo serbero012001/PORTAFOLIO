@@ -24,7 +24,7 @@ export default function Experience({ lang }: { lang: "es" | "en" }) {
           <span className="text-[#D90429] font-mono text-xs mb-4 block">[ 2023 - 2026 ]</span>
           <h3 className="text-3xl font-bold text-white mb-4 group-hover:pl-4 transition-all italic">FREELANCE</h3>
           <p className="text-white/50 text-lg font-light leading-relaxed">
-            {lang === "es" ? "Sistemas visuales y contenido dinámico para proyectos independientes." : "In-house Multimedia Production. Audiovisual identity Soacha branch."}
+            {lang === "es" ? "Sistemas visuales y contenido dinámico para proyectos independientes." : "Visual systems and dynamic content for independent projects."}
           </p>
         </div>
       </div>

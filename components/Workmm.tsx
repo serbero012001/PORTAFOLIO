@@ -24,7 +24,7 @@ export default function Work({ lang }: { lang: "es" | "en" }) {
           className="group relative inline-flex items-center justify-center px-12 py-6 overflow-hidden font-bold text-white border-2 border-[#D90429] rounded-full transition duration-300 ease-out shadow-[0_0_20px_rgba(217,4,41,0.3)] hover:bg-[#D90429]"
         >
           <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#D90429] group-hover:translate-x-0 ease">
-            EXPLORAR ARCHIVOS ↗
+            EXPLORAR ARCHIVOS 
           </span>
           <span className="absolute flex items-center justify-center w-full h-full text-[#D90429] transition-all duration-300 transform group-hover:translate-x-full ease uppercase tracking-[0.2em] text-sm">
             Ver Portafolio Completo
