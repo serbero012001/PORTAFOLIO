@@ -1,31 +1,42 @@
 "use client";
 import { motion } from "framer-motion";
+// Asegúrate de tener estos iconos en tu carpeta de assets
+import pr from "@/assets/icons/premiere.svg";
+import ae from "@/assets/icons/aftereffects.svg";
+import ps from "@/assets/icons/photoshop.svg";
+import lr from "@/assets/icons/lightroom.svg"; 
 
-import premiere from "@/assets/icons/premiere.svg";
-import afterEffects from "@/assets/icons/aftereffects.svg";
-import photoshop from "@/assets/icons/photoshop.svg";
-import illustrator from "@/assets/icons/illustrator.svg";
+export default function Stack({ lang }: { lang: "es" | "en" }) {
+  const tools = [
+    { name: "Premiere Pro", cat: "NLE", icon: pr.src },
+    { name: "After Effects", cat: "VFX", icon: ae.src },
+    { name: "Photoshop", cat: "GFX", icon: ps.src },
+    { name: "Lightroom", cat: "COLOR", icon: lr.src },
+  ];
 
-const stack = [
-  { name: "Premiere", icon: premiere.src },
-  { name: "After Effects", icon: afterEffects.src },
-  { name: "Photoshop", icon: photoshop.src },
-  { name: "Illustrator", icon: illustrator.src },
-];
-
-export default function Stack() {
   return (
-    <section id="stack" className="py-32 px-6 md:px-12">
-      <h2 className="text-5xl md:text-6xl font-serif font-bold mb-12 text-[#FF0000]">Stack & Herramientas</h2>
-      <div className="flex flex-wrap gap-6">
-        {stack.map((s) => (
-          <motion.div
-            key={s.name}
-            whileHover={{ scale: 1.1 }}
-            className="flex items-center gap-3 bg-[#111111] px-4 py-3 rounded-xl shadow-lg cursor-pointer hover:shadow-[#FF0000] hover:shadow-lg transition"
+    <section id="stack" className="py-40 bg-[#050505] px-6 md:px-20 border-t border-white/5">
+      <div className="flex justify-between items-end mb-20 border-b border-[#D90429]/30 pb-4">
+        <h3 className="text-xs font-mono text-[#D90429] tracking-[0.5em] uppercase">
+          {lang === "es" ? "Software & Control" : "Software & Control"}
+        </h3>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-t border-white/10">
+        {tools.map((t, i) => (
+          <motion.div 
+            key={i}
+            whileHover={{ backgroundColor: "rgba(217,4,41,0.05)" }}
+            className="p-10 flex flex-col gap-8 border-r border-b border-white/10 group transition-all"
           >
-            <img src={s.icon} alt={s.name} className="w-10 h-10 object-contain" />
-            <span className="text-[#F5F5F5] font-semibold">{s.name}</span>
+            <div className="flex justify-between items-start">
+              <span className="text-[#D90429] font-mono text-xs">[ 0{i+1} ]</span>
+              <img src={t.icon} className="w-12 h-12 grayscale group-hover:grayscale-0 transition-all duration-500" alt="" />
+            </div>
+            <div>
+              <h4 className="text-2xl font-serif text-white font-bold mb-2">{t.name}</h4>
+              <span className="text-[#D90429] font-mono text-[9px] tracking-widest uppercase">{t.cat}</span>
+            </div>
           </motion.div>
         ))}
       </div>

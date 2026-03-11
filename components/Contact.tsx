@@ -1,44 +1,22 @@
 "use client";
-import { motion } from "framer-motion";
 
-export default function Contact() {
+export default function Contact({ lang }: { lang: "es" | "en" }) {
   return (
-    <section id="contact" className="py-32 px-6 md:px-12 text-center bg-[#050505]">
-      <motion.h2
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-6xl md:text-[6rem] font-serif font-bold text-[#D90429] leading-tight max-w-7xl mx-auto"
-      >
-        ¿ESTÁS LISTO PARA CONTAR TU HISTORIA?
-      </motion.h2>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        className="mt-12 flex flex-col md:flex-row justify-center items-center gap-6"
-      >
-        <a
-          href="mailto:av062712@gmail.com"
-          className="px-8 py-4 border border-[#D90429] text-[#D90429] rounded-lg hover:bg-[#D90429]/20 transition"
-        >
-          Gmail
-        </a>
-        <a
-          className="px-8 py-4 border border-[#D90429] text-[#D90429] rounded-lg hover:bg-[#D90429]/20 transition"
-        >
-          Telefono
-        </a>
-        <a
-          href="https://www.linkedin.com/in/alejandro-villa-hern%C3%A1ndez-97063b325/"
-          className="px-8 py-4 border border-[#D90429] text-[#D90429] rounded-lg hover:bg-[#D90429]/20 transition"
-        >
-          LinkedIn
-        </a>
-      </motion.div>
+    <section id="contact" className="py-40 bg-[#D90429] text-black px-6 text-center border-t-8 border-black">
+      <div className="max-w-4xl mx-auto">
+        <span className="font-mono text-xs uppercase tracking-[0.4em] font-bold mb-8 block">¿Listo para la producción?</span>
+        <h2 className="text-[8vw] font-serif font-black leading-[0.8] mb-12 tracking-tighter">
+          {lang === "es" ? "IMPULSEMOS TU VISIÓN" : "DRIVE YOUR VISION"}
+        </h2>
+        <p className="font-mono text-sm mb-16 max-w-xl mx-auto font-bold opacity-80">
+          {lang === "es" ? "Productor Multimedia enfocado en resultados de alto impacto visual." : "Multimedia Producer focused on high visual impact results."}
+        </p>
+        
+        <div className="flex flex-wrap justify-center gap-4">
+          <a href="mailto:av062712@gmail.com" className="bg-black text-[#D90429] px-10 py-4 font-bold text-[10px] tracking-widest hover:scale-105 transition-transform uppercase">Enviar Correo</a>
+          <a href="#" className="border-2 border-black px-10 py-4 font-bold text-[10px] tracking-widest hover:bg-black hover:text-[#D90429] transition-all uppercase">WhatsApp</a>
+        </div>
+      </div>
     </section>
   );
 }
