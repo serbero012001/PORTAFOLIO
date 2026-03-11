@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Fuentes Personalizadas */
+@layer base {
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Variables para temas */
+:root {
+  --color-primary: #00FFFF; /* Azul eléctrico */
+  --color-accent: #F5F5F5;  /* Blanco roto */
+  --color-dark: #050505;     /* Rich Black */
+}
+
+/* Scroll smooth & anchoring */
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-dark-bg: #050505;
+  --color-neon-cyan: #00FFFF;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  color: white;
+}
