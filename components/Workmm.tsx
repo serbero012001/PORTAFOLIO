@@ -2,7 +2,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Work() {
+export default function Work({ lang }: { lang: "es" | "en" }) {
+
   return (
     <section id="work" className="py-40 bg-[#050505] px-6 md:px-20 border-t border-white/5">
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
