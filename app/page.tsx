@@ -8,15 +8,18 @@ import Experience from "../components/Experience";
 import Process from "../components/Process";
 import Work from "../components/Workmm";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer"; // Importamos el footer nuevo
 
 export default function Page() {
   const [lang, setLang] = useState<"es" | "en">("es");
 
   return (
-    <>
-      {/* Pasamos lang y la función para cambiarlo al Navbar */}
+    <div className="min-h-screen flex flex-col bg-[#050505]">
+      {/* 1. EL NAVBAR */}
       <Navbar lang={lang} setLang={setLang} />
-      <main>
+      
+      {/* 2. EL CONTENIDO (flex-grow para llenar el espacio) */}
+      <main className="flex-grow">
         <div id="home">
           <Hero lang={lang} />
         </div>
@@ -37,6 +40,9 @@ export default function Page() {
           <Contact lang={lang} />
         </div>
       </main>
-    </>
+
+      {/* 3. EL FOOTER (Al final de todo) */}
+      <Footer lang={lang} />
+    </div>
   );
 }
