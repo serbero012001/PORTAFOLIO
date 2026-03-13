@@ -19,6 +19,7 @@ export default function Hero({ lang }: { lang: "es" | "en" }) {
 
   return (
     <section className="relative min-h-screen flex items-center bg-[#050505] px-6 py-10 md:py-0 overflow-hidden">
+      {/* Mantenemos el max-w-7xl para que no se separen los elementos */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full max-w-7xl mx-auto">
         
         {/* CONTENEDOR DE IMAGEN (EQUILIBRIO VISUAL) */}
@@ -31,9 +32,8 @@ export default function Hero({ lang }: { lang: "es" | "en" }) {
             <img 
               src="/perfil.jpg" 
               alt="Alejandro"
-              className="w-full h-full object-cover  hover:opacity-100 transition-opacity duration-1000"
+              className="w-full h-full object-cover hover:opacity-100 transition-opacity duration-1000"
             />
-            {/* Overlay sutil para mejorar el contraste */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
           </div>
         </motion.div>
@@ -44,12 +44,13 @@ export default function Hero({ lang }: { lang: "es" | "en" }) {
           animate={{ y: 0, opacity: 1 }}
           className="text-left order-2 md:order-1"
         >
-          <h1 className="text-[15vw] md:text-[9vw] font-serif font-black text-white leading-[0.8] tracking-tighter uppercase mb-2">
+          {/* El secreto: clamp(Mínimo, Tu valor actual, Máximo para 4K) */}
+          <h1 className="text-[clamp(3rem,15vw,160px)] md:text-[clamp(4rem,9vw,140px)] font-serif font-black text-white leading-[0.8] tracking-tighter uppercase mb-2">
             {t[lang].line1} <br /> 
             <span className="text-white/90">{t[lang].line2}</span>
           </h1>
 
-          <p className="text-[#D90429] font-mono text-[5vw] md:text-[1.8vw] leading-none mb-12 font-bold tracking-tight uppercase">
+          <p className="text-[#D90429] font-mono text-[clamp(1rem,5vw,22px)] md:text-[clamp(1rem,1.8vw,20px)] leading-none mb-12 font-bold tracking-tight uppercase">
             {t[lang].line3}
           </p>
 
