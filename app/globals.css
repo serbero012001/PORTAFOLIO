@@ -1,32 +1,21 @@
 @import "tailwindcss";
 
-/* Fuentes Personalizadas */
-@layer base {
-  h1,h2,h3,h4,h5,h6 {
-    font-family: 'Playfair Display', serif;
-  }
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-}
-
-/* Variables para temas */
-:root {
-  --color-primary: #00FFFF; /* Azul eléctrico */
-  --color-accent: #F5F5F5;  /* Blanco roto */
-  --color-dark: #050505;     /* Rich Black */
-}
-
-/* Scroll smooth & anchoring */
-html {
-  scroll-behavior: smooth;
-}
-
 @theme {
   --color-dark-bg: #050505;
-  --color-neon-cyan: #00FFFF;
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Regla global para eliminar cualquier itálica/cursiva */
+* {
+  font-style: normal !important;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-style: normal; /* Redundancia por seguridad */
+  }
 }
 
 body {

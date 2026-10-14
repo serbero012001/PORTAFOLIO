@@ -7,8 +7,7 @@ import Stack from "../components/Stack";
 import Experience from "../components/Experience";
 import Process from "../components/Process";
 import Work from "../components/Workmm";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer"; // Importamos el footer nuevo
+import Footer from "../components/Footer"; 
 
 export default function Page() {
   const [lang, setLang] = useState<"es" | "en">("es");
@@ -35,9 +34,6 @@ export default function Page() {
         </div>
         <div id="work">
           <Work lang={lang} />
-        </div>
-        <div id="contact">
-          <Contact lang={lang} />
         </div>
       </main>
 

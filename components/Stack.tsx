@@ -16,11 +16,8 @@ export default function Stack({ lang }: { lang: "es" | "en" }) {
       {/* CABECERA (ALINEACIÓN Y JERARQUÍA) */}
       <div className="flex justify-between items-end mb-16 border-b border-[#D90429]/20 pb-6">
         <h3 className="text-[10px] md:text-xs font-mono text-[#D90429] tracking-[0.5em] uppercase font-black">
-          {lang === "es" ? "// SOFTWARE & CONTROL" : "// SOFTWARE & CONTROL"}
+          {lang === "es" ? "SOFTWARE & CONTROL" : "SOFTWARE & CONTROL"}
         </h3>
-        <span className="hidden md:block text-[9px] font-mono text-white/20 uppercase tracking-widest italic">
-          v.2026_SYS_ACTIVE
-        </span>
       </div>
       
       {/* GRID (EQUILIBRIO VISUAL) */}

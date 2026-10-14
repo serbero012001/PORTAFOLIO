@@ -1,6 +1,18 @@
-// layout.tsx
 import "./globals.css";
 import { ReactNode } from "react";
+import { Inter, Space_Grotesk } from "next/font/google";
+
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ["latin"], 
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Alejandro Villa | Portfolio Premium",
@@ -9,11 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className="scroll-smooth">
-      {/* 
-        Añadimos 'min-h-screen' y 'flex flex-col' al body. 
-        Esto asegura que el cuerpo siempre mida al menos el 100% de la pantalla.
-      */}
+    <html lang="es" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-[#050505] text-[#F5F5F5] font-sans transition-colors duration-500 min-h-screen flex flex-col">
         {children}
       </body>

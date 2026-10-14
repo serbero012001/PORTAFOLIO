@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 // IMPORTACIÓN DE COMPONENTES SEPARADOS
 import NavbarProyectos from "@/components/NavbarProyectos";
 import MotionSection from "@/components/MotionSection";
-import WebSection from "@/components/WebSection";
 
 // ASSETS
 import portadaKanat from "@/assets/work/portada-kanat.jpg";
@@ -40,7 +39,14 @@ const TEXTS = {
       }
     ],
     prev: "ANTERIOR",
-    next: "SIGUIENTE"
+    next: "SIGUIENTE",
+    // NUEVOS TEXTOS PARA EL EPK
+    epkTitle: "NÚCLEO",
+    epkSubtitle: "EPK & VIDEOCLIP",
+    epkConcept: "Un viaje nocturno por Bogotá que contrasta la realidad cruda del ascenso con un universo digital distorsionado. El videoclip para 'NÚCLEO' de Ghost y Nascar explora la fama, la velocidad y la pérdida del control a través de una estética Glitch Core.",
+    epkRole: "OPERADOR DE CÁMARA / EDITOR / PRODUCTOR",
+    watchTeaser: "VER TEASER",
+    downloadEpk: "DESCARGAR EPK",
   },
   en: {
     back: "BACK",
@@ -63,7 +69,15 @@ const TEXTS = {
       }
     ],
     prev: "PREV",
-    next: "NEXT"
+    next: "NEXT",
+    // NUEVOS TEXTOS PARA EL EPK
+    epkTitle: "NÚCLEO",
+    epkSubtitle: "EPK & MUSIC VIDEO",
+    epkConcept: "A nocturnal journey through Bogotá contrasting the raw reality of ascent with a distorted digital universe. The music video for 'NÚCLEO' by Ghost and Nascar explores fame, speed, and loss of control through a Glitch Core aesthetic.",
+    epkRole: "CAMERA OPERATOR / EDITOR / PRODUCER",
+    watchTeaser: "WATCH TEASER",
+    downloadEpk: "DOWNLOAD EPK",
+    bts: "BEHIND THE SCENES"
   }
 };
 
@@ -164,60 +178,129 @@ export default function ProyectosPage() {
 
 
 
+        {/* 02. DIRECCIÓN Y PRODUCCIÓN AUDIOVISUAL (TARJETAS COMPACTAS) */}
+        <section id="direction" className="border-t border-white/10 pt-16 md:pt-24 pb-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6">
+            
+            {/* TÍTULO COMPACTO */}
+            <div className="mb-12 md:mb-16">
+              <span className="text-[#D90429] font-mono text-[10px] tracking-[0.5em] uppercase font-black block mb-3">
+                {lang === "es" ? "PORTAFOLIO AUDIOVISUAL" : "AUDIOVISUAL PORTFOLIO"}
+              </span>
+              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-[0.9]">
+                {lang === "es" ? "DIRECCIÓN Y" : "DIRECTION &"}{" "}
+                <span className="text-[#D90429]">
+                  {lang === "es" ? "PRODUCCIÓN" : "PRODUCTION"}
+                </span>
+              </h2>
+            </div>
 
+            {/* GRID DE TARJETAS */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
+              {/* TARJETA 1: NÚCLEO (DESTACADA - 2 COLUMNAS) */}
+              <Link 
+                href="/proyectos/nucleo"
+                className="group relative md:col-span-2 h-[420px] md:h-[520px] bg-[#0a0a0a] border border-white/5 overflow-hidden rounded-2xl hover:border-[#D90429]/50 transition-all duration-500"
+              >
+                <div className="absolute inset-0">
+                  <video 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                    className="w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
+                  >
+                    <source src="/videos/teaser-nucleo.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent" />
+                </div>
 
+                <div className="relative h-full flex flex-col justify-end p-8 md:p-12 z-10">
+                  <span className="text-[#D90429] font-mono text-[10px] tracking-[0.4em] uppercase font-black mb-3">
+                    01. EPK / VIDEOCLIP
+                  </span>
+                  <h3 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-3 leading-none">
+                    NÚCLEO
+                  </h3>
+                  <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-bold mb-6">
+                    GHOST × NASCAR — 2026
+                  </p>
+                  
+                  <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="font-mono text-xs text-[#D90429] tracking-widest uppercase font-bold">
+                      VER PROYECTO
+                    </span>
+                    <span className="text-[#D90429] group-hover:translate-x-2 transition-transform">→</span>
+                  </div>
+                </div>
+              </Link>
 
+              {/* TARJETA 2: ESTA VEZ SÍ */}
+              <Link 
+                href="/proyectos/esta-vez-si"
+                className="group relative h-[420px] md:h-[520px] bg-[#0a0a0a] border border-white/5 overflow-hidden rounded-2xl hover:border-[#D90429]/50 transition-all duration-500"
+              >
+                <div className="absolute inset-0">
+                  <video 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                    className="w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
+                  >
+                    <source src="/videos/esta-vez-si.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent" />
+                </div>
 
+                <div className="relative h-full flex flex-col justify-end p-8 z-10">
+                  <span className="text-[#D90429] font-mono text-[10px] tracking-[0.4em] uppercase font-black mb-3">
+                    02. CORTOMETRAJE
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white mb-2 leading-none">
+                    ESTA VEZ SÍ
+                  </h3>
+                  <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-bold">
+                    2026
+                  </p>
+                </div>
+              </Link>
 
-        {/* 02. PRODUCCIÓN AUDIOVISUAL (RESPONSIVE BLINDADO) */}
-<section id="direction" className="border-t border-white/10 pt-20 md:pt-40 text-center overflow-hidden">
-  
-  {/* TÍTULO: text-[13vw] asegura que la palabra 'PRODUCCIÓN' quepa entera en móvil */}
-  <h2 className="text-[13vw] md:text-9xl font-black mb-6 uppercase tracking-tighter text-white leading-[0.85]">
-    {lang === "es" ? "PRODUCCIÓN" : "PRODUCTION"} <br />
-    <span className="text-[#D90429] opacity-90 italic">
-      {lang === "es" ? "AUDIOVISUAL" : "AUDIOVISUAL"}
-    </span>
-  </h2>
+              {/* TARJETA 3: OTRA VEZ (ANCHO COMPLETO) */}
+              <Link 
+                href="/proyectos/otra-vez"
+                className="group relative md:col-span-3 h-[280px] md:h-[320px] bg-[#0a0a0a] border border-white/5 overflow-hidden rounded-2xl hover:border-[#D90429]/50 transition-all duration-500"
+              >
+                <div className="absolute inset-0">
+                  <video 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                    className="w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
+                  >
+                    <source src="/videos/otra-vez.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent" />
+                </div>
 
-  {/* SUBTÍTULO (REPETICIÓN Y ESPACIADO) */}
-  <p className="text-white/40 font-bold uppercase text-[9px] md:text-[10px] tracking-[0.6em] md:tracking-[1.2em] mb-16 md:mb-24">
-    {lang === "es" ? "TRABAJOS DIRIGIDOS" : "DIRECTED WORKS"}
-  </p>
+                <div className="relative h-full flex flex-col justify-end md:justify-center p-8 md:p-12 z-10">
+                  <span className="text-[#D90429] font-mono text-[10px] tracking-[0.4em] uppercase font-black mb-3">
+                    03. CORTOMETRAJE
+                  </span>
+                  <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white mb-2 leading-none">
+                    OTRA VEZ
+                  </h3>
+                  <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-bold">
+                    2026
+                  </p>
+                </div>
+              </Link>
 
-  {/* GRID DE VIDEOS: EQUILIBRIO VISUAL */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-5xl mx-auto px-6">
-    
-    {/* Video 01 */}
-    <div className="group relative aspect-[9/16] bg-[#0a0a0a] border border-white/5 shadow-2xl overflow-hidden rounded-sm">
-        <video 
-          controls 
-          preload="auto"
-          playsInline
-          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-        >
-          <source src="/videos/esta-vez-si.mp4" type="video/mp4" />
-        </video>
-    </div>
-
-    {/* Video 02 */}
-    <div className="group relative aspect-[9/16] bg-[#0a0a0a] border border-white/5 shadow-2xl overflow-hidden rounded-sm">
-        <video 
-          controls 
-          preload="auto"
-          playsInline
-          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-        >
-          <source src="/videos/otra-vez.mp4" type="video/mp4" />
-        </video>
-    </div>
-  </div>
-</section>
-
-
-
-
+            </div>
+          </div>
+        </section>
 
 
 
@@ -294,10 +377,6 @@ export default function ProyectosPage() {
 
   <div className="w-full">
     <MotionSection lang={lang} />
-  </div>
-
-  <div className="w-full pb-20 md:pb-10">
-    <WebSection lang={lang} />
   </div>
 
       </main>
