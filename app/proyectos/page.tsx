@@ -241,13 +241,13 @@ export default function ProyectosPage() {
                 href="/proyectos/esta-vez-si"
                 className="group relative h-[420px] md:h-[520px] bg-[#0a0a0a] border border-white/5 overflow-hidden rounded-2xl hover:border-[#D90429]/50 transition-all duration-500"
               >
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent">
                   <video 
                     autoPlay 
                     muted 
                     loop 
                     playsInline
-                    className="w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
                   >
                     <source src="/videos/esta-vez-si.mp4" type="video/mp4" />
                   </video>

@@ -44,7 +44,7 @@ export default function EstaVezSiPage() {
           </motion.div>
 
           {/* VIDEO PRINCIPAL */}
-          <div className="relative w-full aspect-video bg-[#0a0a0a] border border-white/5 shadow-2xl overflow-hidden rounded-sm mb-16">
+          <div className="relative w-full max-w-sm mx-auto aspect-[9/16] bg-[#0a0a0a] border border-white/5 shadow-2xl overflow-hidden rounded-sm mb-16">
             <video controls preload="metadata" playsInline className="w-full h-full object-cover">
               <source src="/videos/esta-vez-si.mp4" type="video/mp4" />
             </video>

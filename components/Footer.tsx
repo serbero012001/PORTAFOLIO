@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const contactInfo = {
-  email: "mailto:av062712@gmail.com",
-  whatsapp: "https://wa.me/573189819353", // Tu número real con el código de país (57 para Colombia)
+  email: "mailto:av062712@gmail.com", 
+  whatsapp: "https://wa.me/573189819353", 
   instagram: "https://www.instagram.com/alejandro_29005/?hl=es-la",
   youtube: "https://www.youtube.com/@Fueradecuadro-i6f",
 };
@@ -16,8 +16,8 @@ export default function Footer({ lang = "es" }: { lang?: "es" | "en" }) {
       ctaSubtitle: "PRODUCTOR MULTIMEDIA ENFOCADO EN RESULTADOS DE ALTO IMPACTO VISUAL.",
       emailBtn: "EMAIL",
       whatsappBtn: "WHATSAPP",
-      end: "FIN DE LA TRANSMISIÓN",
-      return: "VOLVER",
+      end: "¿CREAMOS ALGO JUNTOS?", // <--- CAMBIO AQUÍ
+      return: "VOLVER ARRIBA",
       rights: "© 2026 ALEJANDRO VILLA // COLOMBIA",
     },
     en: {
@@ -25,8 +25,8 @@ export default function Footer({ lang = "es" }: { lang?: "es" | "en" }) {
       ctaSubtitle: "MULTIMEDIA PRODUCER FOCUSED ON HIGH-IMPACT VISUAL RESULTS.",
       emailBtn: "EMAIL",
       whatsappBtn: "WHATSAPP",
-      end: "END OF TRANSMISSION",
-      return: "RETURN",
+      end: "SHALL WE CREATE TOGETHER?", // <--- CAMBIO AQUÍ
+      return: "BACK TO TOP",
       rights: "© 2026 ALEJANDRO VILLA // COLOMBIA",
     },
   };
@@ -40,7 +40,6 @@ export default function Footer({ lang = "es" }: { lang?: "es" | "en" }) {
 
   return (
     <footer className="w-full bg-[#050505] relative border-t border-white/5">
-      {/* Espaciado vertical reducido para que el footer sea más compacto */}
       <div className="max-w-[1400px] mx-auto px-8 pt-16 pb-8 flex flex-col">
         
         {/* SECCIÓN DE CONTACTO */}
@@ -56,9 +55,7 @@ export default function Footer({ lang = "es" }: { lang?: "es" | "en" }) {
           
           <div className="flex flex-col gap-4 w-full max-w-sm mx-auto">
             <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=av062712@gmail.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href={contactInfo.email} 
               className="group border-2 border-[#D90429] text-[#D90429] hover:bg-[#D90429] hover:text-black transition-all duration-300 py-3 px-6 text-center font-mono text-xs tracking-[0.2em] font-bold"
             >
               {current.emailBtn}
@@ -74,7 +71,7 @@ export default function Footer({ lang = "es" }: { lang?: "es" | "en" }) {
           </div>
         </div>
 
-        {/* TÍTULO FIN DE LA TRANSMISIÓN */}
+        {/* TÍTULO DE CIERRE */}
         <div className="flex flex-col items-center mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}

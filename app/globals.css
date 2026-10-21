@@ -2,11 +2,13 @@
 
 @theme {
   --color-dark-bg: #050505;
+  --color-brand-red: #D90429;
+  --color-brand-dark-red: #8B0015;
+  --color-brand-light-red: #FF1A3C;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Regla global para eliminar cualquier itálica/cursiva */
 * {
   font-style: normal !important;
 }
@@ -14,11 +16,17 @@
 @layer base {
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-style: normal; /* Redundancia por seguridad */
+    font-style: normal;
+  }
+  
+  ::selection {
+    background-color: var(--color-brand-red);
+    color: white;
   }
 }
 
 body {
   background-color: var(--color-dark-bg);
   color: white;
+  -webkit-font-smoothing: antialiased;
 }
