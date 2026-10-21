@@ -19,6 +19,7 @@ export default function Work({ lang }: { lang: "es" | "en" }) {
     }
   };
 
+  
   const featured = [
     { 
       id: 1, 
