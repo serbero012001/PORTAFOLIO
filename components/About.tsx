@@ -9,7 +9,7 @@ export default function About({ lang }: { lang: "es" | "en" }) {
     es: {
       title: "SOBRE MÍ",
       subtitle: "Mi recorrido creativo",
-      p1: "Soy Alejandro Villa, profesional creativo y estudiante de Dirección y Producción Audiovisual. Combino mi formación académica en el SENA y la CUN con más de 4 años de experiencia práctica en diseño, edición y producción multimedia. Mi enfoque está en crear soluciones visuales que conecten con las marcas y su audiencia.",
+      p1: "Soy Alejandro Villa, profesional creativo y estudiante de Dirección y Producción Audiovisual. Combino mi formación académica en el SENA y la CUN con más de 3 años de experiencia práctica en diseño, edición y producción multimedia. Mi enfoque está en crear soluciones visuales que conecten con las marcas y su audiencia.",
       p2: "Mi interés por este campo nació a partir de una formación que despertó mi curiosidad por la comunicación visual y se convirtió progresivamente en una vocación. Posteriormente, cursé un programa tecnológico de Producción Multimedia, que me permitió explorar diferentes disciplinas creativas y comprender la relación entre imagen, narrativa y comunicación.",
       p3: "Durante ese proceso descubrí que el lenguaje audiovisual era uno de los pilares que conectaba gran parte de mis intereses. Por eso decidí continuar mi formación universitaria en Dirección y Producción Audiovisual.",
       p4: "Mi experiencia combina trabajo con clientes y proyectos freelance, además de experiencia laboral en el área de comunicación visual. Este recorrido me ha permitido desarrollar una visión transversal del proceso creativo: desde la planificación y conceptualización hasta la producción, la postproducción y la publicación de contenidos.",
@@ -21,7 +21,7 @@ export default function About({ lang }: { lang: "es" | "en" }) {
     en: {
       title: "ABOUT ME",
       subtitle: "My creative journey",
-      p1: "I'm Alejandro Villa, a creative professional and Audiovisual Direction and Production student. I combine my academic training at SENA and CUN with over 4 years of hands-on experience in design, editing, and multimedia production. My focus is on creating visual solutions that connect brands with their audience.",
+      p1: "I'm Alejandro Villa, a creative professional and Audiovisual Direction and Production student. I combine my academic training at SENA and CUN with over 3 years of hands-on experience in design, editing, and multimedia production. My focus is on creating visual solutions that connect brands with their audience.",
       p2: "My interest in this field was born from an education that sparked my curiosity for visual communication and progressively became a vocation. Later, I completed a technological program in Multimedia Production, which allowed me to explore different creative disciplines and understand the relationship between image, narrative, and communication.",
       p3: "During that process, I discovered that audiovisual language was one of the pillars connecting most of my interests. That's why I decided to continue my university education in Audiovisual Direction and Production.",
       p4: "My experience combines work with clients and freelance projects, along with professional experience in the visual communication area. This journey has allowed me to develop a transversal vision of the creative process: from planning and conceptualization to production, post-production, and content publishing.",
